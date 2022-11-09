@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>c_sharp_dot_net_3._1_console_sonar</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SharpCompress" />
+    <None Remove="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SharpCompress" Version="0.28.3" /> <!-- Bevat vulnerability CVE-2021-39208. Toegevoegd om OWASP Dependency Checker een resultaat te geven -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" /> <!-- Heeft geen vulnerabilities -->
+  </ItemGroup>
+</Project>
